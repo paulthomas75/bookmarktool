@@ -1,0 +1,19 @@
+<div id="bookmark-container">
+    <div id="bookmark-container-nav">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span>Bookmark Manager Tool</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+
+    <div id="bookmark-content">
+        <button mat-fab (click)="onAddClicked()" id="bookmark-container-add-button" matTooltip="Click to create a new bookmark">
+            <mat-icon>add</mat-icon>
+        </button>
+        <p style="text-align: center;" *ngIf="bookmarksCVM.groupedBookmarks.length == 0">You have no bookmarks, click the (+) to create some.</p>
+        <bm-bookmark-group *ngFor="let bookmarkGroup of bookmarksCVM.groupedBookmarks" [bookmarkGroup]="bookmarkGroup" (outRemoveClicked)="onRemovedClicked($event)"></bm-bookmark-group>
+    </div>
+
+    <bm-bookmark-dialog-container #bookmarkdialog></bm-bookmark-dialog-container>
+</div>

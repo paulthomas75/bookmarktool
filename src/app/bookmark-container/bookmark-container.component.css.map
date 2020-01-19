@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,KAAK;CACnB;;AAED,AAAA,GAAG,AAAA,uBAAuB,CAAC;EACvB,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,IAAI;CACnB;;AAED,AAAA,GAAG,AAAA,iBAAiB,CAAC;EACjB,MAAM,EAAE,IAAI;CACf;;AAED,AAAA,MAAM,AAAA,8BAA8B,CAAC;EACjC,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;EACT,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "bookmark-container.component.scss"
+    ],
+    "names": [],
+    "file": "bookmark-container.component.css"
+}

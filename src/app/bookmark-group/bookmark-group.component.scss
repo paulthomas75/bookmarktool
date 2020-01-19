@@ -1,0 +1,23 @@
+.bookmark-expansion-panel {
+   margin-bottom: 10px; 
+}
+
+.bookmark-list-item {
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    font-weight: 500;
+    background:  #f8f7f7;;
+    margin: 0px 0px 5px 0px
+}
+
+.bookmark-list-item:hover {
+    background: #ebe9e9;
+    .bookmark-item-delete {
+        display: block;
+    }
+}
+
+.bookmark-item-delete {
+    display: none;
+}
