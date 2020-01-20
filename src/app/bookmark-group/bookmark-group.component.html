@@ -1,4 +1,4 @@
-<mat-expansion-panel expanded={{bookmarkGroup.expanded}} class="bookmark-expansion-panel">
+<mat-expansion-panel expanded=[(bookmarkGroup.expanded)] class="bookmark-expansion-panel">
   <mat-expansion-panel-header>
     <mat-panel-title>
       <h3>
@@ -15,7 +15,7 @@
       <div>{{bookmark.name}}</div>
       <div class="middle-filler"></div>
       <div>
-        <button mat-icon-button class="bookmark-item-delete" (click)="onRemovedClicked(bookmark)">
+        <button mat-icon-button class="bookmark-item-delete" (click)="onRemovedClicked(bookmark)" matTooltip="Delete">
           <mat-icon>delete</mat-icon>
         </button>
       </div>

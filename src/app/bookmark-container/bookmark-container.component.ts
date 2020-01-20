@@ -4,11 +4,12 @@ import { Models, Interfaces, ViewModels } from '../models/bookmark.models';
 import * as bookmarkReducers from "../store/bookmark-store.reducers";
 import * as bookmarkActions from "../store/bookmark-store.actions";
 import { BookmarkDialogContainerComponent } from '../bookmark-dialog-container/bookmark-dialog-container.component';
+import { transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'bm-bookmark-container',
   templateUrl: 'bookmark-container.component.html',
-  styleUrls: ['./bookmark-container.component.scss']
+  styleUrls: ['./bookmark-container.component.scss'],
 })
 export class BookmarkContainerComponent implements OnInit {
   @ViewChild(BookmarkDialogContainerComponent, { static: false }) addDialogChildView: BookmarkDialogContainerComponent;
