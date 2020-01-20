@@ -30,6 +30,7 @@ export class BookmarkContainerComponent implements OnInit {
   }
 
   onRemovedClicked(bookmark) {
+    this.store.dispatch(bookmarkActions.BookmarkRemove({bookmark: bookmark}));
     this.removeFromViewModel(bookmark);
   }
 
