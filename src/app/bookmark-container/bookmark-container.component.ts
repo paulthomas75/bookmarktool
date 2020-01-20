@@ -17,21 +17,17 @@ export class BookmarkContainerComponent implements OnInit {
 
   ngOnInit() {
     this.bookmarksCVM = new ViewModels.bookmarksContainer;
-
-    const modalBookmark: Models.Bookmark = {name: "Test1", group: "Group1", url: "url1" };
-    this.store.dispatch(bookmarkActions.BookmarkAdd({bookmark: modalBookmark}));
-    this.addGroupToViewModel(modalBookmark);
   }
 
   onAddClicked() {
     this.addDialogChildView.openDialog((modalBookmark: Interfaces.IBookmark) => {
       if (modalBookmark) {
-        this.store.dispatch(bookmarkActions.BookmarkAdd({ bookmark: {name: modalBookmark.name.trim(), group: modalBookmark.group.trim(), url: modalBookmark.url.trim() }}));
+        this.store.dispatch(bookmarkActions.BookmarkAdd({ bookmark: { name: modalBookmark.name.trim(), group: modalBookmark.group.trim(), url: modalBookmark.url.trim() } }));
         this.addGroupToViewModel(modalBookmark);
       }
     });
   }
-  
+
   onRemovedClicked(bookmark) {
     this.removeFromViewModel(bookmark);
   }
@@ -54,7 +50,7 @@ export class BookmarkContainerComponent implements OnInit {
   private removeFromViewModel(bookmark: Models.Bookmark) {
     const existingGroup = this.bookmarksCVM.groupedBookmarks.filter(x => x.group === bookmark.group);
     existingGroup[0].bookmarks = existingGroup[0].bookmarks.filter(x => x.name !== bookmark.name);
-    if(existingGroup[0].bookmarks.length === 0) {
+    if (existingGroup[0].bookmarks.length === 0) {
       this.bookmarksCVM.groupedBookmarks = this.bookmarksCVM.groupedBookmarks.filter(x => x.group !== bookmark.group);
     }
   }

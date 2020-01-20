@@ -1,5 +1,5 @@
 .bookmark-expansion-panel {
-   margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .bookmark-list-item {
@@ -7,12 +7,14 @@
     width: 100%;
     padding-left: 10px;
     font-weight: 500;
-    background:  #f8f7f7;;
+    background: #f8f7f7;
+    ;
     margin: 0px 0px 5px 0px
 }
 
 .bookmark-list-item:hover {
     background: #ebe9e9;
+
     .bookmark-item-delete {
         display: block;
     }
@@ -20,4 +22,20 @@
 
 .bookmark-item-delete {
     display: none;
+}
+
+.bookmark-list-items .bookmark-list-item {
+    div:first-child {
+        display: flex;
+        align-items: center;
+    }
+
+    div.middle-filler {
+        flex-grow: 1
+    }
+}
+
+span.bookmark-expansion-badge {
+    top: 8px; 
+    right: -20px;
 }

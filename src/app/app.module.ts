@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { BookmarkContainerComponent } from './bookmark-container/bookmark-container.component';
 import { BookmarkGroupComponent } from './bookmark-group/bookmark-group.component';
 import { BookmarkDialogContainerComponent, BookmarkDialogModalComponent } from './bookmark-dialog-container/bookmark-dialog-container.component';
-import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [

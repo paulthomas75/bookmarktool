@@ -1,34 +1,40 @@
-<h1 mat-dialog-title>Add Bookmark</h1>
-<div mat-dialog-content>
-    <p>
-        <mat-form-field appearance="standard">
-            <mat-label>Bookmark Name:</mat-label>
-            <input matInput placeholder="Placeholder" [(ngModel)]="data.name">
-            <mat-icon matSuffix>favorite</mat-icon>
-            <mat-hint>e.g. Cat Videos</mat-hint>
-        </mat-form-field>
-    </p>
+<form [formGroup]="bookmarkForm" (ngSubmit)="onSubmit(this)">
+    <h1 mat-dialog-title>Add Bookmark</h1>
+    <div mat-dialog-content>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Bookmark Name:</mat-label>
+                <input formControlName="name" matInput placeholder="Placeholder" [ngClass]="{ 'is-invalid': submitted && fc.name.errors }" max-length="60">
+                <mat-icon matSuffix>favorite</mat-icon>
+                <mat-hint>e.g. Cat Videos</mat-hint>
+                <mat-error *ngIf="submitted && fc.name.errors ">Name is required</mat-error>
+            </mat-form-field>
+        </p>
 
-    <p>
-        <mat-form-field appearance="standard">
-            <mat-label>Group:</mat-label>
-            <input matInput placeholder="Placeholder" [(ngModel)]="data.group">
-            <mat-icon matSuffix>account_tree</mat-icon>
-            <mat-hint>e.g. Funny</mat-hint>
-        </mat-form-field>
-    </p>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Group:</mat-label>
+                <input formControlName="group" matInput placeholder="Placeholder" [ngClass]="{ 'is-invalid': submitted && fc.group.errors }" max-length="60"/>
+                <mat-icon matSuffix>account_tree</mat-icon>
+                <mat-hint>e.g. Funny</mat-hint>
+                <mat-error *ngIf="submitted && fc.group.errors ">Group is required</mat-error>
+            </mat-form-field>
+        </p>
 
-    <p>
-        <mat-form-field appearance="standard" >
-            <mat-label>URL:</mat-label>
-            <input matInput placeholder="Placeholder" [(ngModel)]="data.url">
-            <mat-icon matSuffix>http</mat-icon>
-            <mat-hint>e.g. http://www.my-funny-cat-videos.com</mat-hint>
-        </mat-form-field>
-    </p>
-</div>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>URL:</mat-label>
+                <input formControlName="url" matInput placeholder="Placeholder" [ngClass]="{ 'is-invalid': submitted && fc.url.errors }" max-length="200">
+                <mat-icon matSuffix>http</mat-icon>
+                <mat-hint>e.g. http://www.my-funny-cat-videos.com</mat-hint>
+                <mat-error *ngIf="submitted && fc.url.errors ">Bookmark URL is required</mat-error>
+            </mat-form-field>
+        </p>
+    </div>
 
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
-</div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-button>Save</button>
+        <!-- <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button> -->
+    </div>
+</form>

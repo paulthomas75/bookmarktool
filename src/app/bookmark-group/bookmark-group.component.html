@@ -3,17 +3,17 @@
     <mat-panel-title>
       <h3>
         <span>{{bookmarkGroup.group}}</span>
-        <span matBadge="{{bookmarkGroup.bookmarks.length}}" matBadgeSize="small" matBadgePosition="after"
-          style="top: 8px; right: -20px;" *ngIf="bookmarkGroup.bookmarks.length > 1"></span>
+        <span matBadge="{{bookmarkGroup.bookmarks.length}}" matBadgeSize="small" matBadgePosition="after" class="bookmark-expansion-badge"
+          *ngIf="bookmarkGroup.bookmarks.length > 1"></span>
       </h3>
     </mat-panel-title>
   </mat-expansion-panel-header>
 
   <mat-list class="bookmark-list-items">
-    <mat-list-item *ngFor="let bookmark of bookmarkGroup.bookmarks" matTooltip="{{bookmark.url}}"
+    <mat-list-item *ngFor="let bookmark of bookmarkGroup.bookmarks" matTooltip="{{bookmark.url}}" name="bookmarkListItem"
       class="bookmark-list-item">
-      <div style="display: flex; align-items: center;">{{bookmark.name}}</div>
-      <div style="flex-grow: 1"></div>
+      <div>{{bookmark.name}}</div>
+      <div class="middle-filler"></div>
       <div>
         <button mat-icon-button class="bookmark-item-delete" (click)="onRemovedClicked(bookmark)">
           <mat-icon>delete</mat-icon>
